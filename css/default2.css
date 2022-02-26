@@ -1,0 +1,318 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Dongle:wght@300;400;700&display=swap');
+*{box-sizing: border-box;margin: 0;padding: 0;}
+ul,li,ol{list-style: none;}
+a{text-decoration: none;color: inherit;}
+img{width: 100%;vertical-align: top;}
+:root{
+    text-align: center;
+}
+.relat{
+    position: relative;
+    overflow: hidden;
+}
+.absol{
+    position: absolute;
+}
+.wrap{
+    margin: 0 auto;
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-auto-rows: 65px;
+    overflow: hidden;
+}
+.container,.row{
+    width: 100%;
+    height: 100%;
+}
+
+/* 왼쪽 스타일 */
+.l-side{
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    grid-column:1/3;
+    grid-row: 1/11;
+    overflow: hidden;
+}
+.logo{
+    position: relative;
+    height: 111px;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    align-items: center;
+    color: #000;
+}
+.logo a{
+    position: absolute;
+    top: -20%;
+    left: 20%;
+    font-size:100px;
+}
+.aside{
+    margin-top: 30px;
+}
+.liu{
+    padding:10px 0 ;
+    margin: 0 5px;
+    background-color: #fff;
+    border: 2px solid black;
+    color: #000;
+}
+.liu:hover{
+    background-color: #c0cccc;
+}
+.submenu{
+    margin: 0 5px;
+    background-color: #fff;
+    border: 1px solid black;
+    display:none;
+}
+.submenu>li{
+    padding:5px 0;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid black;
+}
+.submenu>li:hover{
+    background-color: #c0cccc;
+}
+/* 슬라이드 스타일 */
+.slider{
+    grid-column: 3/13;
+    grid-row: 1/7;
+    overflow: hidden;
+}
+.slider .sec-tit{
+    top:20%;
+    z-index: 1000;
+    font-family: 'Black Han Sans', sans-serif;
+    color: #fff;
+    font-weight: 400;
+    font-size: 34px;
+    text-shadow: 2px 2px 10px #000;
+    border-radius: 10px;
+    background-color: rgba(255, 95, 220, 0.2);
+}
+.slider .container{
+    position: relative;
+    transition: 0.3s ease-out;
+}
+.slide03{
+    height: 100%;
+}
+.slide03 img{
+    transform: translateY(-50%);
+}
+.slide{
+    position: absolute;
+    transition: 0.3s;
+}
+.slide-content{
+    float: left;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(0,0,0,0.4);
+    font-family: 'Dongle', sans-serif;
+    font-size: 32px;
+    color: rgba(0, 0, 0,0.0);
+    text-shadow: 2px 2px 1px #fff;
+    cursor: pointer;
+}
+.slibtn{
+    display: flex;
+    left: 50%;
+    bottom: 5%;
+    transform: translateX(-50%);
+    position: absolute;
+}
+.slibtn div{
+    margin: 0 10px;
+    width: 15px;
+    height: 15px;
+    background-color: #aaa;
+    border-radius: 50%;
+    text-indent: -9999px;
+    cursor: pointer;
+}
+.slibtn div:hover{
+    background-color: aqua;
+}
+/* 공지,갤러리 */
+.main{
+    display: flex;
+    grid-column: 3/13;
+    grid-row: 7/10;
+}
+.main .notgal,.main .banner,.main .quick{
+    width: 33.33333333%;
+}
+.notgal{
+    display: flex;
+    flex-flow: row wrap;
+}
+.btn-not,.btn-gal{
+    margin-right: 20px;
+    padding: 1.0em;
+    cursor: pointer;
+    height: 60px;
+}
+.notgal .notice{
+    display: flex;
+    flex-flow: row wrap;
+    overflow: hidden;
+    width: 100%;
+    height: 95%;
+}
+.notgal .notice ul li{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0.2em;
+}
+.notgal .notice ul{
+    margin-top: 10px;
+    width: 33%;
+}
+.notgal .not-po{
+    display: flex;
+    height: 5%;
+}
+.notgal .not-po li{
+    font-weight: 700;
+    margin: 0 20px;
+}
+.gallery{
+    display: none;
+}
+.gallery a{
+    width: 33%;
+}
+.gallery a img{
+    height: 100%;
+}
+.banner img{
+    height: 100%;
+}
+/* 퀵메뉴 스타일 */
+.quick{
+    display: flex;
+}
+.quick .left{
+    width: 30%;
+    height: 100%;
+    text-align: center;
+    justify-content: center;
+}
+.quick .left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.quick .left a{
+    width: 80%;
+    height: 90%;
+    font-family: 'Dongle', sans-serif;
+    text-align: center;
+    padding-right: 10%;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 4px;
+    writing-mode:vertical-rl;
+}
+.quick .right{
+    display:flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    width: 70%;
+    height: 100%;
+}
+.quick .right a{
+    margin: 0 auto;
+    width: 80%;
+    font-family: 'Dongle', sans-serif;
+    font-size: 30px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+/* 푸터 스타일 */
+.footer{
+    position:relative;
+    border-top: 2px solid black;
+    grid-column: 3/13;
+    grid-row: 10/11;
+    display: flex;
+    padding: 2px;
+}
+.footer .flogo{
+    height: 100%;
+    flex-grow: 1;
+    font-size: 40px;
+    padding:0 40px;
+}
+.footer .right{
+    flex-grow: 8;
+}
+.footer .menu{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 50%;
+}
+.footer .menu a{
+    position: absolute;
+    top: 10%;
+    width: 30px;
+    height: 100%;
+}
+.footer .menu a:nth-child(1){
+    right: 5%;
+}
+.footer .menu a:nth-child(2){
+    right: 10%;
+}
+.footer .menu a:nth-child(3){
+    right: 15%;
+}
+/* 팝업스타일 */
+.modal-popup{
+    display: none;
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    left: 50%;
+    top: 50%;
+    z-index: 99999;
+    transform: translate(-50%,-50%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border-radius: 15px;
+    border: 2px solid black;
+}
+.modal-popup h2{
+    font-family: 'Black Han Sans', sans-serif;
+    background: #aaa;
+    border-radius: 50%;
+    color: #eee;
+    padding: 10px 0;
+    margin: 50px;
+    font-weight: 200;
+    text-shadow: 2px 2px 2px #000;
+}
+.modal-btn button{
+    margin-top: 10%;
+    padding: 10px 10px;
+    font-size: 24px;
+}
+.modal-popup.active{
+    display: block;
+}
